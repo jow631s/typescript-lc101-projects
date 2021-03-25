@@ -4,24 +4,38 @@
 
 // Part 1: Declare (5) Variables With Type
 
+const spacecraftName: string = 'Determination';
+const speedMph: number = 17500;
+const kilometersToMars: number = 225000000;
+const kilometersToTheMoon: number = 384400;
+const milesPerKilometer: number = 0.621;
 
 
-// Part 2: Print Days to Mars
+// 27.7.3. Part 2 - Print Days to Mars
+
+const milesToMars: number = kilometersToMars * milesPerKilometer;
+const hoursToMars: number = milesToMars / speedMph;
+const daysToMars: number = hoursToMars / 24;
 
 
 
-// Code an output statement here (use a template literal):
+
 
 
 
 // Part 3: Create a Function ("getDaysToLocation")
 
+function getDaysToLocation(kilometersAway: number): number {
+  const milesAway: number = kilometersToMars * milesPerKilometer;
+  const hoursToLocation: number = milesAway / speedMph;
+  const daysToLocation: number = hoursToLocation / 24;
+  return daysToLocation;
+}
 
+console.log(`It will take spacecraft ${spacecraftName} ${getDaysToLocation(kilometersToMars)} days to get to Mars`);
 
 // Move your output statement from part 2 here. Update the template literal to call
 // the function and print the outputs for a Mars trip and a moon trip.
-
-
 
 
 // Part 4: Create a Spacecraft Class
